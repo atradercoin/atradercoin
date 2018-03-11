@@ -1,0 +1,28 @@
+use atradercoin;
+CREATE USER 'abe'@'localhost' IDENTIFIED BY '12349876';
+GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+FLUSH PRIVILEGES;
+
+goto bitcoin-abe
+python -m Abe.abe --config atradercoin.conf --commit-bytes 100000 --no-serve
+
+
+back into mysql
+use atradercoin;
+show tables;
+update chain set chain_policy ='Sha256Chain' where chain_name='atradercoin';
+select chain_id, chain_name, chain_code3, chain_policy from chain where chain_name='atradercoin';
+
+exit;
+
+goto bitcoin-abe
+python -m Abe.abe --config atradercoin.conf --commit-bytes 100000 --no-serve
+
+
+create cgi-bin in home with coinname
+add to /etc/sudoers
+
+see setting up fcgi on bitcoin abe
+
+
+
