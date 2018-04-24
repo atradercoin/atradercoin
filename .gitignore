@@ -9,9 +9,11 @@ src/build.h
 *.orig
 *.o
 *.patch
+*.exe
+*.xlsx
+*.copy
 .atradercoin
 #compilation and Qt preprocessor part
-*.qm
 Makefile
 atradercoin-qt
 #resources cpp
